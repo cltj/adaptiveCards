@@ -1,0 +1,79 @@
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "@{outputs('RecieptTitle')}"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "text": "Bestillingsnr: @{triggerOutputs()?['body/Title']}",
+                            "wrap": true
+                        }
+                    ],
+                    "width": "auto"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "text": "@{outputs('RecieptFrom')}",
+                            "wrap": true
+                        }        
+                    ],
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "spacing": "None",
+            "text": "Fullført dato: @{outputs('Date')}_@{outputs('Time')}",
+            "isSubtle": true,
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "@{outputs('RecieptDescription')}",
+            "wrap": true
+        },
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "$data": "${properties}",
+                    "title": "Bestiller:",
+                    "value": "@{outputs('getBestillerUser')?['body/displayName']}"
+                },
+                {
+                    "$data": "${properties}",
+                    "title": "Applikasjonsnavn:",
+                    "value": "@{triggerOutputs()?['body/AppOrderID']}"
+                },
+                {
+                    "$data": "${properties}",
+                    "title": "Antall lisenser:",
+                    "value": "@{triggerOutputs()?['body/LisensInfo']}"
+                },
+                {
+                    "$data": "${properties}",
+                    "title": "Beløp:",
+                    "value": "@{triggerOutputs()?['body/Sum']}"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2"
+}
