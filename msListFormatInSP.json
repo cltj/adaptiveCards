@@ -1,0 +1,116 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+    "additionalRowClass": {
+      "operator": ":",
+      "operands": [
+        {
+          "operator": "==",
+          "operands": [
+            "[$Utf_x00f8_rt]",
+            "Ny"
+          ]
+        },
+        "sp-css-backgroundColor-neutralBackground10",
+        {
+          "operator": ":",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                "[$Utf_x00f8_rt]",
+                "Pågår"
+              ]
+            },
+            "sp-css-backgroundColor-warningBackground30",
+            {
+              "operator": ":",
+              "operands": [
+                {
+                  "operator": "&&",
+                  "operands": [
+                    {
+                      "operator": "&&",
+                      "operands": [
+                        {
+                          "operator": "&&",
+                          "operands": [
+                            {
+                              "operator": "==",
+                              "operands": [
+                                "[$KostnaderInfo]",
+                                "Betalt"
+                              ]
+                            },
+                            {
+                              "operator": "!=",
+                              "operands": [
+                                "[$AppleOrderID]",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "operator": "==",
+                          "operands": [
+                            "[$Utf_x00f8_rt]",
+                            "Fullført"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "operator": "==",
+                      "operands": [
+                        "[$Plattform]",
+                        "iPad"
+                      ]
+                    }
+                  ]
+                },
+                "sp-css-backgroundColor-successBackground40",
+                {
+                  "operator": ":",
+                  "operands": [
+                    {
+                      "operator": "&&",
+                      "operands": [
+                        {
+                          "operator": "&&",
+                          "operands": [
+                            {
+                              "operator": "==",
+                              "operands": [
+                                "[$Utf_x00f8_rt]",
+                                "Fullført"
+                              ]
+                            },
+                            {
+                              "operator": "==",
+                              "operands": [
+                                "[$Plattform]",
+                                "iPad"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "operator": "==",
+                          "operands": [
+                            "[$KostnaderInfo]",
+                            "Gratis"
+                          ]
+                        }
+                      ]
+                    },
+                    "sp-css-backgroundColor-successBackground40",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
